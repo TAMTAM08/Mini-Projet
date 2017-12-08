@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!--  link rel ="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/-->
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel ="stylesheet" type="text/css" href="css/myStyle.css"/>
+
+   
+<title>liste de courses </title>
+</head>
+<body ng-app="MyApp" ng-controller="ProduitController">
+
+ <div class="container spacer">
+ <div class="panel panel-primary">
+ <div class="panel-heading">Ma Petite Liste De Courses</div>
+ <div class="panel-body">
+ 
+
+<!-- <label>Prix: </label><input type="text" ng-model="prix"/> -->
+
+<!-- <button class="btn btn-danger" ng-click="Supprimer()">Prix</button> -->
+
+</div>
+
+<div class="container">
+<table class="table table-striped">
+<thead>
+<tr>
+<th class="col-md-4">Désignation</th>
+<th class="col-md-2">Quantité</th>
+<th class="col-md-2"></th>
+</thead>
+
+<tbody>
+
+<tr ng-repeat="p in produits.content">
+
+<td>{{p.designation}}</td>
+<td>{{p.quantite}}</td>
+
+
+ 
+<input type="button" value="JE T'AI TROUVE" onclick="afficher_cacher('a_afficher');" />
+</div> 
+    
+    
+ <td >{{p.prix}}</td> 
+</tr>
+</tbody>
+</table>
+<div class="container">
+<ul class="nav nav-pills">
+<li ng-class="{active:pageCourante==$index}" ng-repeat="p in pages track by $index">
+<a ng-click="gotoPage($index)">{{$index}}</a>
+</li>
+</ul>
+<ul class="pager">
+  <li>
+  <li><a href="index.html">Oups...j'ai oublié... la moutard ? </a></li>
+</ul> 
+
+<div class="container">
+  <h3>Pour connaître le montant</h3>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Clique ici $</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Passage à la caisse</h4>
+        </div>
+        <div class="modal-body">
+          <p>tu dois règler </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+ 
+</body>
+</html>
+
+
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
